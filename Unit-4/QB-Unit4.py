@@ -229,19 +229,11 @@ lengths = [len(word) for word in sentence.split() if word != 'the']
 print(lengths)
 
 # 17
-def transposer(sentence):
-    new_sentence = ''
-    for x in sentence.split():
-        new_sentence += ' '
-        for y in x:
-            if y != 'z':
-             new_sentence += chr(ord(y)+1)
-            else:
-                new_sentence += y
-
-    return new_sentence[1:]
-
-print(transposer(sentence))
+x = list(map(lambda x: chr(ord(x)+1) if x != 'z' and x != ' ' and x != '!' else x , sentence))
+new_sentence = ''
+for i in x:
+    new_sentence += i
+print(new_sentence)
 
 # 18
 odds = [(x,x+2) for x in range(1,10)]
